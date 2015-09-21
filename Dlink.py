@@ -11,6 +11,8 @@ x = a.read()
 send = """HTTP/1.1 200 OK\r\nServer: LRBD-bigdownload-\r\nDate: Thu, 16 Jul 2015 12:03:30 GMT\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-transfer-encoding: binary\r\nContent-Length: """+ str(len(x)) +"""\r\nContent-Disposition: attachment; filename="""+ filE +"""\r\nContent-Type: application"""+"\r\n\r\n"+ x
 s.bind((host, port))        
 
+print 'Waite for connect'
+
 s.listen(5)                 
 while True:
    c, addr = s.accept()     
